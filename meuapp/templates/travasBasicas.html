@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Pole Dance {% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <link href="{% static  'style.css' %}"rel="stylesheet">
+<div class=bordas>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Pole Dance</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+
+    <h2> Travas Básicas </h2>
+      <ul>
+        <li style="display: inline-block;margin-right: 10px;">
+          <figure>
+            <img src="{% static 'Trava.jpg' %}" class=imagem>
+            <figcaption>Abdominal Trava 1</figcaption>
+          </figure>
+        </li>
+        <li style="display: inline-block;margin-right: 10px;">
+          <figure>
+            <img src="{% static 'TravaP.jpg' %}" class=imagem>
+            <figcaption>Abdominal Trava P</figcaption>
+          </figure>
+        </li>
+        <li style="display: inline-block;margin-right: 10px;">
+          <figure>
+            <img src="{% static 'TravaReta.jpg' %}" class=imagem>
+            <figcaption>Abdominal Trava Reta</figcaption>
+          </figure>
+        </li>
+      </ul>
+      <p> As travas básicas são fundamentais para garantir segurança e estabilidade ao segurar a barra durante os movimentos. </p>
+        <ul>
+          <li><a href="https://youtube.com/shorts/zsibX1PuLL8?si=tkXE6Cdsa1C2jg8b">Abdominal Trava P</a></li>
+          <li><a href="https://youtube.com/shorts/xD1PyPkvX1k?si=MzY71mt3TVhyOm6U">Abdominal Trava Reta</a></li>
+        </ul>
+  </body>
+
+</div>
+  <script src="script.js"></script>
+</html>
+{% endblock %}
+

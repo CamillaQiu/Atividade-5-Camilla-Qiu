@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class=bordas>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link href="{% static 'style.css' %}"rel="stylesheet">
+    <title>Erro</title>
+</head>
+<body>
+    <h1>{{ message | safe}}</h1>
+
+      {% if action == "Editar" %}
+          <a href="{% url 'editar' movimento.id %}"><button>Voltar para Editar</button> </a>
+      {% else %}
+          <a href="{% url 'adicionar' %}" ><button>Continuar adicionando</button></a>
+      {% endif %}
+  
+    <a href="{% url 'home' %}"><button>Voltar para a Home</button></a>
+</body>
+</div> 
+</html>

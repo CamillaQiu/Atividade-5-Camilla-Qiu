@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Pole Dance {% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <link href="{% static  'style.css' %}"rel="stylesheet">
+<div class=bordas>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Pole Dance</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+
+    <h2> Subida </h2>
+        <img src="{% static 'Subida.jpg' %}" class=imagem>
+      <p> A subida é um movimento que demonstra força e habilidade, permitindo escalar a barra de forma graciosa. </p>
+        <ul>
+          <p>Outros tipos de subida: </p>
+          <li><a href="https://youtu.be/I0ADcdaEwOU?si=zdqrnX65TaxWGdav">Subida Iguana</a></li>
+          <li><a href="https://youtu.be/g8hzhG9WmJ0?si=4Oj8P1f_5FbgY3XI">Subida Caterpilar</a></li>
+        </ul>
+  </body>
+
+</div>
+  <script src="script.js"></script>
+</html>
+{% endblock %}

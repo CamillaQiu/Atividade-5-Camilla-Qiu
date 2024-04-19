@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Pole Dance{% endblock %}</title>
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>ENG4021 - PROJETO INTEGRADO - SOFTWARE</h1>
+        <h2><strong>Professores:</h2></strong>
+          <p>Luís Bicalho</p>
+          <p>Jan K. S. </p>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                  <ul>
+                    <li><a href="{% url 'caminhada' %}">Caminhada</a></li>
+                    <li><a href="{% url 'travasBasicas' %}">Travas Básicas</a></li>
+                    <li><a href="{% url 'jump' %}">Jump</a></li>
+                    <li><a href="{% url 'compasso' %}">Compasso</a></li>
+                    <li><a href="{% url 'subida' %}">Subida</a></li>
+                  </ul>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>Contato: camillaqiu@hotmail.com</p>
+        <p>Redes Sociais: <a href="https://www.instagram.com/cami.qiu?igsh=MWQwc3g2aHQxejZuMg%3D%3D&utm_source=qr">Instagram</a> | <a href="https://discord.gg/g2UfP2g5">Discord</a></p>
+    </footer>
+</body>
+</html>

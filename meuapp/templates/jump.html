@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Pole Dance {% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <link href="{% static  'style.css' %}"rel="stylesheet">
+<div class=bordas>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Pole Dance</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+
+    <h2> Jump </h2>
+        <img src="{% static 'jump.jpg' %}" class=imagem>
+      <p> O jump, que envolve pular e se segurar na barra com as pernas, adiciona dinamismo e impacto às apresentações. </p>
+        <ul>
+          <li><a href="https://youtu.be/wZt7IBUwEm4?si=QN41pIKl84bV3oqh">Tutorial 1</a></li>
+          <li><a href="https://youtu.be/ov5HbxiJKPk?si=Z4rerep_7IiK3SXm">Tutorial 2</a></li>
+        </ul>
+  </body>
+
+</div>
+  <script src="script.js"></script>
+</html>
+{% endblock %}

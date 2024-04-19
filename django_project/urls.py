@@ -1,0 +1,39 @@
+"""
+URL configuration for django_project project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+
+from meuapp import views
+
+urlpatterns = [
+    path('',views.inicio),
+    path('login', views.login_usuario),
+    path('logout',views.logout_usuario),
+    path('cadastrar', views.cadastro_usuario),
+    path('home', views.index, name="home"),
+    path('movimentos', views.create_movimentos, name="adicionar"),
+    path('movimentos/update/<int:id>', views.update_movimentos, name="editar"),
+    path('movimentos/delete/<int:id>', views.delete_movimentos),
+    path('admin/', admin.site.urls),
+    path('caminhada/', views.caminhada, name='caminhada'),
+    path('travasBasicas/', views.travasBasicas, name='travasBasicas'),
+    path('jump/', views.jump, name='jump'),
+    path('compasso/', views.compasso, name='compasso'),
+    path('subida/', views.subida, name='subida'),
+    
+]
+

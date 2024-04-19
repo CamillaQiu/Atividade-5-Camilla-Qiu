@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Pole Dance {% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <link href="{% static  'style.css' %}"rel="stylesheet">
+<div class=bordas>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Pole Dance</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+
+    <h2> Caminhada </h2>
+        <img src="{% static 'Caminhada.jpg' %}" class=imagem>
+      <p> A caminhada no pole dance é essencial para movimentos fluidos e transições elegantes ao redor da barra. </p>
+        <ul>
+          <li><a href="https://youtu.be/vogipXxQqBM?si=VxzetgLpY7fG0mEx">Tutorial 1</a></li>
+          <li><a href="https://youtu.be/E5uZlZCJ31I?si=dwX1udLaR2PTkCdO">Tutorial 2</a></li>
+        </ul>
+  </body>
+
+</div>
+  <script src="script.js"></script>
+</html>
+{% endblock %}

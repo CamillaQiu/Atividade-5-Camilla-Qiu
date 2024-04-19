@@ -1,0 +1,41 @@
+<div class=bordas>
+<h1> {{ action }} Movimentos </h1>
+
+<form method="POST"> 
+  {% load static %}
+  <link href="{% static 'style.css' %}"rel="stylesheet">
+  {% csrf_token %}
+  <div> 
+    <label><mark><ins>Nome: </mark></ins></label>
+    <input id="nome" type="text" name="nome" value="{{ movimento.nome }}">
+  </div>
+
+  <div> 
+    <label><mark><ins>Descrição: </mark></ins></label>
+    <textarea id="descricao" name="descricao">{{ movimento.descricao }}</textarea>
+  </div>
+
+  <div> 
+    <label><mark><ins>Tipo: </ins></mark></label>
+    <select name="tipo" id="tipo">
+      <option value="Aquecimento" {% if movimento.tipo == 'Aquecimento' %} selected {% endif %}>Aquecimento</option>
+      <option value="Giro" {% if movimento.tipo == 'Giro' %} selected {% endif %}>Giro</option>
+      <option value="Acrobacia" {% if movimento.tipo == 'Acrobacia' %} selected {% endif %}>Acrobacia</option>
+    </select>
+  </div>
+
+  <div> 
+    <label><mark><ins>Dificuldade: </ins></mark></label>
+    <input id="dificuldade" type="number" min="0" max="10" name="dificuldade" value="{{ movimento.dificuldade }}">
+  </div>
+
+  <div> 
+    <label>Realizado: </label>
+    <input id="realizados" type="checkbox" name="realizados" {% if movimento.realizados %}checked{% endif %}>
+    <label for="realizados">Sim</label>
+  </div>
+  
+  <input type="submit" value="Registrar">
+
+</form>
+</div>

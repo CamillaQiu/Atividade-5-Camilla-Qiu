@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %}Pole Dance {% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <link href="{% static  'style.css' %}"rel="stylesheet">
+<div class=bordas>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Pole Dance</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div
+      style="width: 300px; border: 2px solid #000; background-color: lightskyblue; padding: 10px; border-radius: 10px; margin-left: auto; margin-right: auto;">
+      <h1> <span class=titulo1>Pole Dance</span></h1>
+      <h3> <span class=titulo2>Os segredos do Pole Dance</span></h3>
+    </div>
+    <h2> {{nome}} </h2>
+    <h2> <a href="/logout">Sair</a> </h2>
+    <p style="text-align: justify; font-size: 20px;"> O <b style="color: darkblue"> Pole Dance </b> é uma forma de dança
+      que combina movimentos fluidos com técnicas acrobáticas em torno de um poste vertical. Os praticantes utilizam o
+      poste como suporte para realizar uma série de movimentos que envolvem <i>força, flexibilidade, equilíbrio</i> e
+      <i>coordenação</i>. Essa modalidade de dança tem ganhado popularidade como uma forma de exercício físico,
+      proporcionando benefícios como tonificação muscular, melhora da flexibilidade e aumento da confiança corporal.
+    </p>
+    <span class=centralizar><img src="{% static 'pole_cami2.jpg' %}" class=imagemP></span>
+    <div style="border: 2px solid #000; background-color: lightskyblue; padding: 10px;" class=experiencia;>
+      <h3 style="font-size: 25px;">Minha experiência com o Pole: </h3>
+      <p style="text-align: justify; font-family: cursive; font-size: 20px;">
+        "O pole dance, nos últimos 5 anos, mudou a minha vida de uma forma que eu jamais poderia imaginar. É muito mais
+        do que um simples exercício físico; é uma mistura perfeita entre arte, expressão corporal e superação de
+        limites. Descobri uma nova forma de me expressar, me divertir e me desafiar a cada movimento. É incrível como o
+        meu corpo se transformou e conquistou habilidades que eu nunca imaginei serem possíveis. O pole dance é
+        realmente um esporte único, enquanto me conecto profundamente comigo mesma e com a minha paixão pela dança."
+      </p>
+    </div>
+    <h2>Primeiros movimentos: </h2>
+    <a href = "/movimentos"> Adicionar Novo Movimento</a>
+      <ol>
+      {% for item in movimentos %}
+          <li><h2>{{ item.nome }}</h2> <a href="/movimentos/update/{{ item.id }}">Editar</a>  <a href="/movimentos/delete/{{ item.id }}">Remover</a> </li>
+          <p>{{ item.descricao }}</p>
+          <p>Tipo: {{ item.tipo }}</p>
+          <p>Dificuldade: {{ item.dificuldade }}/10</p>
+          <img src="{% static item.icone %}" alt="{{ item.nome }} Icon" class=imagem>
+          {% if item.realizados %}
+          <p>Realizado: Sim</p>
+          {% else %}
+          <p>Realizado: Não</p>
+          {% endif %}
+          <ul>
+              {% for video in item.video_set.all %}
+                  <li><a href="{{ video.link }}"class="video-link">{{ video.nome }}</a> 
+            - Tempo de Duração: {{ video.tempo }} segundos - Criado por {{ video.nomeConta }} 
+                  </li>
+              {% endfor %}
+          </ul>
+
+      {% endfor %}
+      </ol> 
+    
+    <table class="tabela">
+      <tr>
+        <th>Intensidade</th>
+        <th>Acrobacias</th>
+        <th>Giros</th>
+      </tr>
+      <tr>
+        <td>Básico</td>
+        <td> Seat Golfinho, Blade, Buda, Anjo, Seat Águia, Martini, Charme, Flat Line, Monkey, Mexicana e etc.</td>
+        <td>Fireman, Hollywood, Back Hook, Juliette, Chair e etc.</td>
+      </tr>
+      <tr>
+        <td>Intermediário</td>
+        <td>Pino, Fish Hook, Ovito, Vortex, Batman, Broken Doll, Allegra, Jade, Cupido, Aysha e etc.</td>
+        <td>Reversa, Pencil Spin, Spider, Chair com uma mão, Compasso Suspenso e etc.</td>
+      </tr>
+      <tr>
+        <td>Avançado</td>
+        <td>Devil Invertido, Machine Gun, Yogini, Pégasus, Iron X, Unicórnio, Capezio, Shark, Prana, Eagle e etc.</td>
+        <td>Phoenix, Relógio e etc.</td>
+      </tr>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+
+</div>
+
+</html>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Pole Dance {% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <link href="{% static  'style.css' %}"rel="stylesheet">
+<div class=bordas>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Pole Dance</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+
+    <h2> Compasso </h2>
+        <img src="{% static 'compasso.jpg' %}" class=imagem>
+      <p> O compasso é uma série de movimentos ritmados ao redor da barra, contribuindo para expressão e fluidez nas performances. </p>
+        <ul>
+          <li><a href="https://youtu.be/fhuEWq3dueo?si=cQaEhdgTyKprrjxO">Tutorial 1</a></li>
+          <li><a href="https://youtu.be/FTly5gulwOw?si=_3s6uRsG3gpsd6VP">Tutorial 2</a></li>
+        </ul>
+  </body>
+
+</div>
+  <script src="script.js"></script>
+</html>
+{% endblock %}
